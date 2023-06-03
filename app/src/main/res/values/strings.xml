@@ -2,4 +2,9 @@
     <string name="app_name">Motivation</string>
     <string name="ola_kotlin">Olá Kotlin</string>
     <string name="nova_frase">NOVA FRASE</string>
+    <string name="go_start">Vamos começar?</string>
+    <string name="what_your_name">Qual seu nome?</string>
+    <string name="save">Salvar</string>
+
+    <string name="validation_mandatory_name" >Informe um nome!</string>
 </resources>
