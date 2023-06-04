@@ -47,7 +47,7 @@
         android:id="@+id/text_hello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/ola_kotlin"
+        android:text="@string/hello"
         android:layout_below="@id/linear_container_menu"
         android:layout_centerHorizontal="true"
         android:textSize="18sp"
@@ -62,9 +62,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingHorizontal="14dp"
-        android:fontFamily="@font/cabin"
         android:gravity="center"
-        android:text="Riscos devem ser caaaorridos, porque o maior perigo é não arriscar nada!"
+        android:fontFamily="@font/cabin"
+        android:layout_centerHorizontal="true"
+        android:text="@string/phrases_motivation"
         android:textSize="20sp"
         android:layout_centerVertical="true"
         android:textColor="@color/black"
@@ -91,7 +92,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="32dp"
         android:backgroundTint="@color/purple_800"
-        android:text="@string/nova_frase"
+        android:text="@string/new_phrase"
         android:textStyle="bold" />
 
 </RelativeLayout>
