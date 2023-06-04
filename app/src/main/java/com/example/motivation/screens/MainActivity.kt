@@ -1,14 +1,14 @@
 package com.example.motivation.screens
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.example.motivation.infra.MotivationConstants
 import com.example.motivation.R
-import com.example.motivation.infra.SecurityPreferences
+import com.example.motivation.data.Mock
 import com.example.motivation.databinding.ActivityMainBinding
+import com.example.motivation.infra.MotivationConstants
+import com.example.motivation.infra.SecurityPreferences
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -20,7 +20,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         handleUserName()
+        handleNextPhase()
 
         // eventos
         binding.buttonNewPhrase.setOnClickListener(this)
@@ -31,14 +33,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(view: View) {
         if (view.id == R.id.button_new_phrase) {
-            addNewPhrase()
+            handleNextPhase()
         } else if (view.id in listOf(R.id.image_happy_face, R.id.image_infinity, R.id.image_sun)) {
             handleFilter(view.id)
         }
-    }
-
-    private fun addNewPhrase() {
-        Toast.makeText(this, "clicou", Toast.LENGTH_SHORT).show()
     }
 
     private fun handleUserName() {
@@ -69,5 +67,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 category = MotivationConstants.Filter.HAPPY
             }
         }
+    }
+
+    private fun handleNextPhase() {
+        val phrase = Mock().getPhrase(category)
+        binding.textPhrase.text = phrase
     }
 }
