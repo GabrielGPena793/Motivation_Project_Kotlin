@@ -32,6 +32,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding.imageHappyFace.setOnClickListener(this)
     }
 
+    override fun onResume() {
+        super.onResume()
+        handleUserName()
+    }
+
     override fun onClick(view: View) {
         if (view.id == R.id.button_new_phrase) {
             handleNextPhase()
